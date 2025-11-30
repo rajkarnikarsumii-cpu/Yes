@@ -14,6 +14,7 @@ public class CinemaTicket
         double basePrice = 0;
         double surcharge = 0;
         double finalPrice = 0;
+        double price = 0;
         
         System.out.print("Enter customer age: ");
         int age = scanner.nextInt();
@@ -31,17 +32,23 @@ public class CinemaTicket
         }
         
        
-        System.out.print("Enter movie language (Nepali, English, Hindi): ");
-        String language = scanner.nextLine();
         
-        if (language.equals("Hindi")) {
-            surcharge = 50;
+        System.out.print("Enter movie language (Nepali, English, Hindi): ");
+        System.out.println ("Is it Hindi Movie");
+        boolean hlanguage = scanner.nextBoolean();
+        System.out.println ("Is it English Movie");
+        boolean elanguage = scanner.nextBoolean();
+        System.out.println ("Is it Nepali Movie");
+        boolean nlanguage = scanner.nextBoolean();
+        
+        if(hlanguage==true){
+            price=50;
         }
-        else if (language.equals("English")) {
-            surcharge = 100;
+        else if(elanguage==true){
+            price = 100;
         }
         else {
-            surcharge = 0;
+            price = 0;
         }
         
         finalPrice = basePrice + surcharge;
